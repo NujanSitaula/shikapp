@@ -113,7 +113,7 @@ export default function NavBar() {
                     handleMouseLeave();
                   }}
                 >
-                  <h3 className="lg:text-xxs text-xxxs font-medium cursor-pointer">
+                  <h3 className="lg:text-xxs text-xxxs font-medium cursor-pointer text-text-dark">
                     {curr.title}
                   </h3>
                 </Link>
@@ -136,7 +136,7 @@ export default function NavBar() {
                       setNavItem(selectedNavItem === index ? null : index)
                     }
                   >
-                    <h3 className="lg:text-xxs text-xxxs font-medium">
+                    <h3 className="lg:text-xxs text-xxxs font-medium text-text-dark">
                       {curr.title}
                     </h3>
                     <DropDownIcon
@@ -169,14 +169,13 @@ export default function NavBar() {
                     }}
                   >
                     {curr.subTitle.map((subtitle, indx) => (
-                      <Link href={subtitle.link}>
+                      <Link key={subtitle.title + indx} href={subtitle.link}>
                         <div
-                          key={"Sub " + indx}
                           className="flex flex-row gap-4 items-center py-3"
                         >
                           <NavAIIcon height="25px" width="25px" />
                           <div className="flex flex-col w-[200px]">
-                            <h4 className="font-medium text-[14px]">
+                            <h4 className="font-medium text-[14px] text-text-dark">
                               {subtitle.title}
                             </h4>
                             <p className="text-xxs text-text-light">

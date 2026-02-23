@@ -43,7 +43,7 @@ export default function Page() {
         <h4 className="sm:text-xs text-xxs text-brand-color">
           Introduction to Shikshya
         </h4>
-        <h2 className="md:text-lg sm:text-rg text-md font-semibold text-center">
+        <h2 className="md:text-lg sm:text-rg text-md font-semibold text-center text-text-dark">
           Our Educational Odyssey: From Vision to Reality
         </h2>
         <p className="text-text-light sm:text-xs text-xxs text-center lg:w-1/2 rg:w-[60%] md:w-[70%]">

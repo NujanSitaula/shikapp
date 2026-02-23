@@ -49,7 +49,7 @@ export default function Page() {
                 <div className="bg-brand-color-medium p-2 rounded-full">
                   <AIIcon />
                 </div>
-                <h3 className="font-medium text-sm">AI Integrated</h3>
+                <h3 className="font-medium text-sm text-text-dark">AI Integrated</h3>
               </div>
               <p className="sm:text-xs text-xxs text-text-light">
                 Experience the future of education with Shikshya's AI
@@ -82,7 +82,7 @@ export default function Page() {
                 <div className="bg-[#5C7DF1] p-2 rounded-full">
                   <AIIcon />
                 </div>
-                <h3 className="font-medium text-sm">AI Integrated</h3>
+                <h3 className="font-medium text-sm text-text-dark">AI Integrated</h3>
               </div>
               <p className="sm:text-xs text-xxs text-text-light">
                 Experience the future of education with Shikshya's AI
@@ -115,7 +115,7 @@ export default function Page() {
                 <div className="bg-[#B25CF1] p-2 rounded-full">
                   <AIIcon />
                 </div>
-                <h3 className="font-medium text-sm">AI Integrated</h3>
+                <h3 className="font-medium text-sm text-text-dark">AI Integrated</h3>
               </div>
               <p className="sm:text-xs text-xxs text-text-light">
                 Experience the future of education with Shikshya's AI

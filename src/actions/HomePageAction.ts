@@ -6,7 +6,7 @@ export const getHeaderData = async (): Promise<any> => {
   } catch (e) {
     console.error("Error fetching header data:", e);
     throw e; // Re-throw the error to handle it in the component
-  } 
+  }
 };
 
 export const getFeatureData = async () => {

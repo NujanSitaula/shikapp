@@ -1,15 +1,48 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
 
-*{
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   font-family: "Poppins", sans-serif;
 }
 
+html,
 body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 nextjs-portal {
@@ -65,8 +98,8 @@ input::-webkit-inner-spin-button {
 
 .active-image {
   transition: z-index 0.3s ease-in-out, width 0.3s ease-in-out,
-    height 0.3s ease-in-out, filter 0.3s ease-in-out, left 0.3s ease-in-out,
-    right 0.3s ease-in-out, bottom 0.3s ease-in-out;
+  height 0.3s ease-in-out, filter 0.3s ease-in-out, left 0.3s ease-in-out,
+  right 0.3s ease-in-out, bottom 0.3s ease-in-out;
 }
 
 .drawer {
@@ -82,4 +115,68 @@ input::-webkit-inner-spin-button {
 }
 .accordion-tab{
   transition:  height 0.3s ease-in-out;
+}
+
+/* Custom animation classes */
+.animated-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Ensure Tailwind utilities work properly */
+@layer utilities {
+  .text-brand-color {
+    color: #DF273A;
+  }
+
+  .bg-header-gradient {
+    background: linear-gradient(to right, #EFF7FE, #EFF7FE, #FFEEEE);
+  }
+
+  .bg-background-color {
+    background-color: #F6F8FC;
+  }
+
+  .text-text-dark {
+    color: #202020;
+  }
+
+  .text-text-light {
+    color: #929CA6;
+  }
+
+  .text-text-medium {
+    color: #424242;
+  }
+
+  .text-text-normal {
+    color: #323539;
+  }
+
+  /* White text for dark backgrounds - only target text elements */
+  .bg-brand-dark-blue h1,
+  .bg-brand-dark-blue h2,
+  .bg-brand-dark-blue h3,
+  .bg-brand-dark-blue h4,
+  .bg-brand-dark-blue h5,
+  .bg-brand-dark-blue h6,
+  .bg-brand-dark-blue p,
+  .bg-brand-dark-blue span,
+  .bg-black h1,
+  .bg-black h2,
+  .bg-black h3,
+  .bg-black h4,
+  .bg-black h5,
+  .bg-black h6,
+  .bg-black p,
+  .bg-black span,
+  .bg-gray-800 h1,
+  .bg-gray-800 h2,
+  .bg-gray-800 h3,
+  .bg-gray-800 h4,
+  .bg-gray-800 h5,
+  .bg-gray-800 h6,
+  .bg-gray-800 p,
+  .bg-gray-800 span {
+    color: white !important;
+  }
 }

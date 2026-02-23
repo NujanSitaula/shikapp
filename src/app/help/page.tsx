@@ -99,7 +99,7 @@ export default function Page() {
                 {curr.icon}
               </div>
               <div className="flex flex-col sm:items-start items-center md:gap-3 gap-2">
-                <h3 className="font-medium lg:text-sm md:text-xs text-xxs transition-colors duration-300 ease-in-out group-hover:text-brand-color">
+                <h3 className="font-medium lg:text-sm md:text-xs text-xxs text-text-dark transition-colors duration-300 ease-in-out group-hover:text-brand-color">
                   {curr.title}
                 </h3>
                 <p className="text-text-light rg:text-xs sm:text-xxs text-xxxs sm:text-left text-center">

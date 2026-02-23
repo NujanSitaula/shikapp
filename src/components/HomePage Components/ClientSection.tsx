@@ -103,12 +103,15 @@ export default function ClientSection() {
               isDark
               className="px-[60px]"
               width={115}
+              tooltipText="iOS app coming soon!"
+              isClickable={false}
             />
             <StoreBadge
               src={PlayStoreDarkLogo}
               isDark
               className="px-[60px]"
               width={115}
+              href="https://play.google.com/store/apps/details?id=app.shikshya.student&pcampaignid=web_share"
             />
           </div>
         </div>

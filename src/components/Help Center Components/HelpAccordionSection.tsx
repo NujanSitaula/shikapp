@@ -66,7 +66,7 @@ export default function HelpAccordionSection() {
       <p className="text-brand-color font-regular rg:text-xs sm:text-xxs text-xxxs">
         FAQs: Your Instant Knowledge Base
       </p>
-      <h2 className="text-text-dark font-semibold rg:text-[32px] md:text-lg sm:text-rg text-sm text-center">
+      <h2 className="text-white font-semibold rg:text-[32px] md:text-lg sm:text-rg text-sm text-center">
         Frequently Asked Questions
       </h2>
       <p className="text-text-light rg:text-xs text-center rg:w-1/2 w-3/2 sm:text-xxs text-xxxs">
@@ -87,7 +87,7 @@ export default function HelpAccordionSection() {
             }}
           >
             <div className="flex flex-row w-full justify-between">
-              <h3 className="font-medium lg:text-sm md:text-xs text-xxs transition-colors duration-300 ease-in-out group-hover:text-brand-color">
+              <h3 className="font-medium lg:text-sm md:text-xs text-xxs text-text-dark transition-colors duration-300 ease-in-out group-hover:text-brand-color">
                 {curr.title}
               </h3>
 

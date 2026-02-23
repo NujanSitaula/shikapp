@@ -49,7 +49,7 @@ export default function Page() {
               color={"#F15C5C"}
             />
             <div className="flex flex-row items-center gap-4">
-              <h3 className="font-medium text-sm">Our Mission </h3>
+              <h3 className="font-medium text-sm text-text-dark">Our Mission </h3>
             </div>
             <p className="sm:text-xs text-xxs text-text-light">
               Experience the future of education with Shikshya's AI integration
@@ -64,7 +64,7 @@ export default function Page() {
               color={"#F15C5C"}
             />
             <div className="flex flex-row items-center gap-4">
-              <h3 className="font-medium text-sm">Values</h3>
+              <h3 className="font-medium text-sm text-text-dark">Values</h3>
             </div>
             <p className="sm:text-xs text-xxs text-text-light">
               Experience the future of education with Shikshya's AI integration
@@ -160,7 +160,7 @@ export default function Page() {
                   <SettingIcon color="#ffffff" width="30" height="30" />
                 </div>
                 <div>
-                  <h2 className="font-medium rg:text-sm text-xs pb-1">
+                  <h2 className="font-medium rg:text-sm text-xs pb-1 text-text-dark">
                     Getting Started with Shikshya
                   </h2>
                   <p className="rg:text-xs text-xxs text-text-light">At Shikshya</p>

@@ -58,7 +58,7 @@ export default function MobileNavBar({
             if (curr.subTitle.length === 0) {
               return (
                 <React.Fragment key={index}>
-                  <h3 className="text-xxs font-medium cursor-pointer w-full">
+                  <h3 className="text-xxs font-medium cursor-pointer w-full text-text-dark">
                     {curr.title}
                   </h3>
                   {index !== NAV_LINKS.length - 1 && (
@@ -80,7 +80,7 @@ export default function MobileNavBar({
                         }
                       }}
                     >
-                      <h3 className="text-xxs font-medium">{curr.title}</h3>
+                      <h3 className="text-xxs font-medium text-text-dark">{curr.title}</h3>
                       <DropDownIcon
                         width="14"
                         height="15"
@@ -97,7 +97,7 @@ export default function MobileNavBar({
                               <div key={"Sub" + subIndex}>
                                 <Link
                                   href={sub.link}
-                                  className="text-xxs mt-1 cursor-pointer"
+                                  className="text-xxs mt-1 cursor-pointer text-text-dark"
                                 >
                                   {sub.title}
                                 </Link>
