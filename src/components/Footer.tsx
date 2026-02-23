@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Button from "./shared/Button";
 
 import ShikshyaLogoDark from "../../public/shikshya_logo_dark.svg";
@@ -19,7 +20,9 @@ export default function Footer() {
         <br />
         Our no-strings attached free trial lets you test our product today.
       </p>
-      <Button title="Request Demo" className={"py-[10px] md:my-5 my-3"} />
+      <Link href="/contact">
+        <Button title="Request Demo" className={"py-[10px] md:my-5 my-3"} />
+      </Link>
       <hr className="w-full h-[1px] bg-gray-400  rg:my-10 my-5" />
       <div className="flex rg:flex-row flex-col items-center w-full gap-[15%] justify-between">
         <div className="rg:w-1/2 w-full">

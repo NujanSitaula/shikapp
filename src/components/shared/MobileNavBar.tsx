@@ -9,6 +9,35 @@ import React, { useState } from "react";
 import NAV_LINKS from "@/constants/NavLinks";
 import DropDownIcon from "../../../public/icons/DropDownIcon";
 import Link from "next/link";
+import {
+  FaHistory,
+  FaHandsHelping,
+  FaRobot,
+  FaBoxes,
+  FaMoneyBillWave,
+  FaClipboardCheck,
+  FaQuestionCircle,
+  FaEnvelope,
+  FaBlog,
+} from "react-icons/fa";
+
+const SUBMENU_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Our Story": FaHistory,
+  "Social Impacts": FaHandsHelping,
+  "AI Virtual Teacher": FaRobot,
+  "Inventory Management ": FaBoxes,
+  "Inventory Management": FaBoxes,
+  "Account and Payroll": FaMoneyBillWave,
+  "Assessment Management ": FaClipboardCheck,
+  "Assessment Management": FaClipboardCheck,
+  "Help Center": FaQuestionCircle,
+  "Contact Us": FaEnvelope,
+  Blog: FaBlog,
+};
+
+function getSubmenuIcon(title: string) {
+  return SUBMENU_ICONS[title] ?? FaRobot;
+}
 
 export default function MobileNavBar({
   selectedNavItem,
@@ -93,16 +122,23 @@ export default function MobileNavBar({
                       {selectedNavItem != null && index == selectedNavItem && (
                         <>
                           {NAV_LINKS[selectedNavItem].subTitle.map(
-                            (sub, subIndex) => (
-                              <div key={"Sub" + subIndex}>
-                                <Link
-                                  href={sub.link}
-                                  className="text-xxs mt-1 cursor-pointer text-text-dark"
+                            (sub, subIndex) => {
+                              const SubIcon = getSubmenuIcon(sub.title);
+                              return (
+                                <div
+                                  key={"Sub" + subIndex}
+                                  className="flex flex-row items-center gap-2 mt-1"
                                 >
-                                  {sub.title}
-                                </Link>
-                              </div>
-                            )
+                                  <SubIcon className="text-brand-color w-4 h-4 shrink-0" />
+                                  <Link
+                                    href={sub.link}
+                                    className="text-xxs cursor-pointer text-text-dark"
+                                  >
+                                    {sub.title}
+                                  </Link>
+                                </div>
+                              );
+                            }
                           )}
                         </>
                       )}

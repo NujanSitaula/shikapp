@@ -7,8 +7,36 @@ import NAV_LINKS from "@/constants/NavLinks";
 import DropDownIcon from "../../public/icons/DropDownIcon";
 import MobileNavBar from "./shared/MobileNavBar";
 import Link from "next/link";
-import NavAIIcon from "../../public/icons/NavAIIcon";
+import {
+  FaHistory,
+  FaHandsHelping,
+  FaRobot,
+  FaBoxes,
+  FaMoneyBillWave,
+  FaClipboardCheck,
+  FaQuestionCircle,
+  FaEnvelope,
+  FaBlog,
+} from "react-icons/fa";
 
+
+const SUBMENU_ICONS: Record<string, React.ComponentType<{ className?: string; width?: string; height?: string }>> = {
+  "Our Story": FaHistory,
+  "Social Impacts": FaHandsHelping,
+  "AI Virtual Teacher": FaRobot,
+  "Inventory Management ": FaBoxes,
+  "Inventory Management": FaBoxes,
+  "Account and Payroll": FaMoneyBillWave,
+  "Assessment Management ": FaClipboardCheck,
+  "Assessment Management": FaClipboardCheck,
+  "Help Center": FaQuestionCircle,
+  "Contact Us": FaEnvelope,
+  Blog: FaBlog,
+};
+
+function getSubmenuIcon(title: string) {
+  return SUBMENU_ICONS[title] ?? FaRobot;
+}
 
 export default function NavBar() {
   const [selectedNavItem, setNavItem] = useState<number | null>(null);
@@ -105,7 +133,7 @@ export default function NavBar() {
               return (
                 <Link
                   key={curr.title}
-                  href={"/features"}
+                  href={curr.link ?? "#"}
                   onMouseEnter={() => {
                     setNavItem(null);
                   }}
@@ -168,33 +196,38 @@ export default function NavBar() {
                       handleMouseLeave();
                     }}
                   >
-                    {curr.subTitle.map((subtitle, indx) => (
-                      <Link key={subtitle.title + indx} href={subtitle.link}>
-                        <div
-                          className="flex flex-row gap-4 items-center py-3"
-                        >
-                          <NavAIIcon height="25px" width="25px" />
-                          <div className="flex flex-col w-[200px]">
-                            <h4 className="font-medium text-[14px] text-text-dark">
-                              {subtitle.title}
-                            </h4>
-                            <p className="text-xxs text-text-light">
-                              {subtitle.description}
-                            </p>
+                    {curr.subTitle.map((subtitle, indx) => {
+                      const SubIcon = getSubmenuIcon(subtitle.title);
+                      return (
+                        <Link key={subtitle.title + indx} href={subtitle.link}>
+                          <div
+                            className="flex flex-row gap-4 items-center py-3"
+                          >
+                            <SubIcon className="text-brand-color w-6 h-6 shrink-0" />
+                            <div className="flex flex-col w-[200px]">
+                              <h4 className="font-medium text-[14px] text-text-dark">
+                                {subtitle.title}
+                              </h4>
+                              <p className="text-xxs text-text-light">
+                                {subtitle.description}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </Link>
-                    ))}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               );
             }
           })}
 
-          <Button
-            title="Request Demo"
-            className="lg:text-xxs text-xxxs lg:px-6 px-4 lg:py-2 py-1"
-          />
+          <Link href="/contact">
+            <Button
+              title="Request Demo"
+              className="lg:text-xxs text-xxxs lg:px-6 px-4 lg:py-2 py-1"
+            />
+          </Link>
         </div>
       </div>
       <MobileNavBar selectedNavItem={selectedNavItem} setNavItem={setNavItem} />
